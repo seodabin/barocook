@@ -1,0 +1,41 @@
+#spring.application.name=barocook-board
+debug: false
+#spring boot actuator ? ??? ??? ?? ??? ??? ?? ??? ??? ????? ??
+management.endpoints.web.exposure.include: "*"
+logging:
+  level:
+    com.barocook.barocookboard: debug
+    org.springframework.web.servlet: debug
+    #Binding param ???????
+    org.hibernate.type.descriptor.sql.BasicBinder: trace
+
+jasypt:
+  encryptor:
+    bean: jasyptEncryptorAES
+
+spring:
+  datasource:
+    url: ENC(W8+n9knum2xucii5NxpaH3JgMbEAolG/H/9Ggm8U2jzFFYpVZxc7lfjovvDlIYK3cqKqDD5EAjc5V3AqOc3NqesVtMw3REaghjG8EA6eLJo=)
+    username: ENC(ofAi6R+mbqdwKGDR38VgIfXgdOYtZ2dz3gSN6a79/cqDisX2tDAZXZLVTFyAmjX3)
+    password: ENC(Y7iFmAc5otXlV9PrZXQZ9Y2MR7bqq4BOnAF43LgSOVb5RXzbupj+zZgyKV9VZfWR)
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    #data.sql test data ?? ??
+    defer-datasource-initialization: true
+    hibernate.ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate.format_sql: true
+      hibernate.default_batch_fetch_size: 100
+  h2.console.enabled: false
+  sql.init.mode: always
+
+---
+
+#spring:
+# config.activate.on-profile: testdb
+# datasource:
+#   url: jdbc:h2:mem:board;mode=mysql
+#   driver-class-name: org.h2.Driver
+# sql.init.mode: always
+# test.database.replace: none

@@ -19,6 +19,9 @@ spring:
     username: ENC(ofAi6R+mbqdwKGDR38VgIfXgdOYtZ2dz3gSN6a79/cqDisX2tDAZXZLVTFyAmjX3)
     password: ENC(Y7iFmAc5otXlV9PrZXQZ9Y2MR7bqq4BOnAF43LgSOVb5RXzbupj+zZgyKV9VZfWR)
     driver-class-name: com.mysql.cj.jdbc.Driver
+#   url: jdbc:h2:mem:testdb
+#   username: sa
+#   driver-class-name: org.h2.Driver
   jpa:
     #data.sql test data ?? ??
     defer-datasource-initialization: true

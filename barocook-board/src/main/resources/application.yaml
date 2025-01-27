@@ -32,9 +32,12 @@ spring:
       hibernate.default_batch_fetch_size: 100
   h2.console.enabled: false
   sql.init.mode: always
-
+  data.rest:
+      base-path: /api
+      detection-strategy: annotated
+#server.servlet.context-path: /api     #springboot 3.4.1 bug 로 base-path 적용이 안되서 버전업으로 해결
 ---
-
+spring.config.import: aesKey.properties
 #spring:
 # config.activate.on-profile: testdb
 # datasource:

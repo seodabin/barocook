@@ -36,6 +36,8 @@ spring:
       base-path: /api
       detection-strategy: annotated
 #server.servlet.context-path: /api     #springboot 3.4.1 bug 로 base-path 적용이 안되서 버전업으로 해결
+  thymeleaf3:
+    decoupled-logic: true
 ---
 spring.config.import: aesKey.properties
 #spring:
